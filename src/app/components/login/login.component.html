@@ -1,15 +1,21 @@
 <div class="container">
-    <form>
-        <div>
-            <label for="username"> UserName </label>
-        </div>
-        <input type="text" id="username" />
-        <div>
-            <label for="password"> Password </label>
-        </div>
-        <input type="password" id="password" />
-        <div class="py-2">
-            <button class="btn btn-success"> Login </button>
+    <form [FormGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card p-4 border-warning">
+                    <div>
+                        <label for="userName"> UserName </label>
+                    </div>
+                    <input type="text" id="userName" class="form-control" formControlName="userName" #username/>
+                    <div>
+                        <label for="password"> Password </label>
+                    </div>
+                    <input type="password" id="password" class="form-control" formControlName="password" #password />
+                    <div class="py-2">
+                        <button class="btn btn-success" (click) ="checkLogin(username.value, password.value)"> Login </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
 </div>

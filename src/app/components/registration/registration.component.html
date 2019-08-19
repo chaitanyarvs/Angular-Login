@@ -1,1 +1,30 @@
-<p>registration works!</p>
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card p-4 border-warning">
+                    <div>
+                        <label for="firstName"> FirstName </label>
+                    </div>
+                    <input type="text" id="firstName" class="form-control" name="firstname" #firstname />
+                    <div>
+                        <label for="lastName"> LastName </label>
+                    </div>
+                    <input type="text" id="lastName" class="form-control" name="lastname" #lastname />
+                    <div>
+                        <label for="userName"> UserName </label>
+                    </div>
+                    <input type="text" id="userName" class="form-control" name="username" #username />
+                    <div>
+                        <label for="password"> Password </label>
+                    </div>
+                    <input type="password" id="password" class="form-control" name="password" #password />
+                    <div class="py-2">
+                        <button class="btn btn-success" (click)="checkLogin(username.value, password.value)"> Register
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
